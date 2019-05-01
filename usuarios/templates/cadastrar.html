@@ -1,0 +1,49 @@
+{% extends "base_usuario.html" %}
+
+{% block body %}
+
+	<form class="form-signin" role="form" action="{% url 'cadastrar' %}" method="post">
+
+		{% csrf_token %}
+
+		<h2 style="text-align: center;">Cadastre um usuário</h2>
+
+		<input type="text" id="id_nome" name="nome" class="form-control" placeholder="Nome*" required autofocus>
+
+		<input type="text" id="id_sobrenome" name="sobrenome" class="form-control" placeholder="Sobrenome*" required autofocus>
+
+		<br>
+		
+		<input type="text" id="id_nome_empresa" name="nome_empresa" class="form-control" placeholder="Nome Empresa*" required autofocus>
+
+		<input type="text" id="id_telefone" name="telefone" class="form-control" placeholder="Telefone*" required 
+		autofocus>
+
+		<br>
+
+		<input type="text" id="id_email" name="email" class="form-control" placeholder="E-mail*" required autofocus>
+
+		<input type="password" id="id_senha" name="senha" class="form-control" placeholder="Senha*" required autofocus>
+
+		<input type="password" id="id_confirmar_senha" name="confirmar_senha" class="form-control" placeholder="Confirmar Senha*" required autofocus>
+
+		<br>
+
+		<button class="btn btn-lg btn-primary btn-block" type="submit" value="Login">Cadastrar</button>
+
+		<hr/>
+
+		{% if from.errors %}
+
+		<div class="alert alert-danger">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+
+			{{form.non_field_errors}}
+
+		</div>
+
+		{% endif %}
+
+	</form>	
+
+{% endblock %}
