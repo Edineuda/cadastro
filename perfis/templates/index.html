@@ -5,7 +5,7 @@
 <div class="col-lg-12">
 	<div class="panel panel-default">
 		<div class="panel-heading">
-			<strong>Perfis</strong>
+			<strong>Lista de cadastro do Banco de Dados</strong>
 		</div>
 
 		{% if perfis %}
@@ -14,7 +14,7 @@
 				{% for perfil in perfis %}
 
 					<li>
-						<a href="{% url 'exibir' perfil.id %}">{{  perfil.nome }}</a> / {{ perfil.email }}
+						Nome: {{ perfil.nome }} {{ perfil.sobrenome }} / E-mail: {{ perfil.email }}/ Telefone: {{ perfil.telefone }} / Empresa: {{ perfil.nome_empresa }}
 					</li>
 				{% endfor %}
 			</ul>		
